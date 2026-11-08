@@ -21,4 +21,8 @@ browser-plugins/
 
 ## Extensions
 
-_None yet._
+- [links-bar](links-bar/) – shows a bar with your own links at the top of selected websites.
+
+## License
+
+[MIT](LICENSE)

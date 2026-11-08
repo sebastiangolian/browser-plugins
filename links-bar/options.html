@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Links Bar settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Links Bar</h1>
+
+      <section>
+        <h2>Sites</h2>
+        <p class="hint">
+          One pattern per line. The bar is shown only on matching pages.<br />
+          <code>example.com</code> – exact host ·
+          <code>localhost:8124</code> – host with port ·
+          <code>*.example.com</code> – domain with subdomains ·
+          <code>github.com/my-org/*</code> – host and path (<code>*</code> matches anything)
+        </p>
+        <textarea id="sites" rows="6" spellcheck="false" placeholder="*.example.com"></textarea>
+      </section>
+
+      <section>
+        <h2>Links</h2>
+        <p class="hint">Shown in the bar from left to right. Only http(s) URLs are allowed.</p>
+        <div id="links"></div>
+        <button type="button" id="add-link">+ Add link</button>
+      </section>
+
+      <section>
+        <h2>Appearance</h2>
+        <p class="hint">Preview updates as you type. Changes are applied after saving.</p>
+        <div id="preview"></div>
+        <div class="style-grid">
+          <label>Background <input type="color" data-style="backgroundColor" /></label>
+          <label>Bottom border <input type="color" data-style="borderColor" /></label>
+          <label>Link text <input type="color" data-style="textColor" /></label>
+          <label>Hover background <input type="color" data-style="hoverBackgroundColor" /></label>
+          <label>Hover text <input type="color" data-style="hoverTextColor" /></label>
+          <label>Icons <input type="color" data-style="iconColor" /></label>
+          <label>Font size (px) <input type="number" data-style="fontSize" min="10" max="24" /></label>
+          <label>Bar height (px) <input type="number" data-style="height" min="24" max="64" /></label>
+        </div>
+        <button type="button" id="reset-style">Reset to default style</button>
+      </section>
+
+      <footer>
+        <button type="button" id="save" class="primary">Save</button>
+        <span id="status" role="status"></span>
+      </footer>
+    </main>
+
+    <template id="link-row">
+      <div class="link-row">
+        <input type="text" class="label" placeholder="Label" />
+        <input type="url" class="url" placeholder="https://..." />
+        <button type="button" class="up" title="Move up">↑</button>
+        <button type="button" class="down" title="Move down">↓</button>
+        <button type="button" class="remove" title="Remove">✕</button>
+      </div>
+    </template>
+
+    <script src="bar.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

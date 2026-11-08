@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Links Bar",
+  "version": "1.0.0",
+  "description": "Shows a bar with your own links at the top of selected websites.",
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js",
+    "scripts": ["background.js"]
+  },
+  "action": {
+    "default_title": "Links Bar settings"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["match.js", "bar.js", "content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "links-bar@sebastiangolian"
+    }
+  }
+}
