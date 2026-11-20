@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Break Timer</title>
+    <link rel="stylesheet" href="theme.css" />
+    <style>
+      body { width: 300px; padding: 16px; }
+      .phase { margin: 0; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 12px; }
+      .clock { margin: 4px 0; font-size: 40px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.1; }
+      .detail { margin: 0 0 12px; color: var(--muted); font-size: 13px; min-height: 1.5em; }
+      .actions { display: flex; gap: 6px; margin-top: 14px; }
+      .actions button { flex: 1; padding: 6px 8px; white-space: nowrap; }
+      footer { display: flex; justify-content: space-between; margin-top: 14px; color: var(--muted); font-size: 12px; }
+      footer a { color: inherit; }
+    </style>
+  </head>
+  <body class="phase-idle">
+    <p class="phase" id="phase"></p>
+    <div class="clock" id="clock">--:--</div>
+    <p class="detail" id="detail"></p>
+    <div class="progress"><div id="progress"></div></div>
+    <div class="actions" id="actions"></div>
+    <footer>
+      <span id="rhythm"></span>
+      <a href="#" id="open-settings">Settings</a>
+    </footer>
+    <script src="common.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -24,5 +24,5 @@ On the right side of the bar:
 
 ## Install locally
 
-- **Chrome / Edge:** `chrome://extensions` → enable *Developer mode* → *Load unpacked* → select this `links-bar` folder.
+- **Brave / Chrome / Edge:** `brave://extensions` (or `chrome://extensions`) → enable *Developer mode* → *Load unpacked* → select this `links-bar` folder.
 - **Firefox:** `about:debugging#/runtime/this-firefox` → *Load Temporary Add-on…* → select `links-bar/manifest.json`.

@@ -16,12 +16,13 @@ browser-plugins/
 
 ## Loading an extension locally
 
-- **Chrome / Edge:** open `chrome://extensions`, enable *Developer mode*, click *Load unpacked* and select the extension folder.
+- **Brave / Chrome / Edge:** open `brave://extensions` (or `chrome://extensions`), enable *Developer mode*, click *Load unpacked* and select the extension folder.
 - **Firefox:** open `about:debugging#/runtime/this-firefox`, click *Load Temporary Add-on…* and select the extension's `manifest.json`.
 
 ## Extensions
 
 - [links-bar](links-bar/) – shows a bar with your own links at the top of selected websites.
+- [break-timer](break-timer/) – work/break rhythm timer (45 / 15 min by default) with break reminders.
 
 ## License
 

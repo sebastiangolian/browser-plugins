@@ -1,0 +1,64 @@
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #d1d5db;
+  --track: #e5e7eb;
+  --work: #2563eb;
+  --break: #d97706;
+  --ok: #16a34a;
+  --error: #dc2626;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #18181b;
+    --text: #f3f4f6;
+    --muted: #9ca3af;
+    --border: #4b5563;
+    --track: #374151;
+    --work: #3b82f6;
+    --break: #f59e0b;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+button {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+button.primary {
+  border-color: var(--work);
+  background: var(--work);
+  color: #fff;
+}
+
+.phase-work { --accent: var(--work); }
+.phase-break { --accent: var(--break); }
+.phase-idle { --accent: var(--muted); }
+
+.progress {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--track);
+  overflow: hidden;
+}
+
+.progress > div {
+  height: 100%;
+  width: 0;
+  background: var(--accent);
+}

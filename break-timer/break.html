@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Time for a break</title>
+    <link rel="stylesheet" href="theme.css" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+        box-sizing: border-box;
+        padding: 24px;
+        text-align: center;
+      }
+      h1 { margin: 0 0 4px; font-size: 22px; color: var(--accent); }
+      .clock { margin: 8px 0; font-size: 48px; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.1; }
+      .detail { margin: 0 0 16px; color: var(--muted); }
+      .progress { margin-bottom: 20px; }
+      .actions { display: flex; gap: 8px; justify-content: center; }
+    </style>
+  </head>
+  <body class="phase-break">
+    <h1 id="title">Time for a break</h1>
+    <div class="clock" id="clock">--:--</div>
+    <p class="detail" id="detail">Stand up, stretch, look away from the screen.</p>
+    <div class="progress"><div id="progress"></div></div>
+    <div class="actions">
+      <button type="button" id="skip">End break now</button>
+      <button type="button" id="close" class="primary">OK</button>
+    </div>
+    <script src="common.js"></script>
+    <script src="break.js"></script>
+  </body>
+</html>
