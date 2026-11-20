@@ -1,0 +1,20 @@
+#!/bin/sh
+# Bumps plugin versions and folds the change into the commit that was just made.
+[ -n "$BUMP_HOOK_RUNNING" ] && exit 0
+export BUMP_HOOK_RUNNING=1
+
+GIT_DIR=$(git rev-parse --git-dir)
+[ -d "$GIT_DIR/rebase-merge" ] || [ -d "$GIT_DIR/rebase-apply" ] && exit 0
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "post-commit: node not found, plugin versions not bumped" >&2
+  exit 0
+fi
+
+ROOT=$(git rev-parse --show-toplevel)
+cd "$ROOT" || exit 0
+MANIFESTS=$(node .githooks/bump-version.js) || exit 0
+[ -z "$MANIFESTS" ] && exit 0
+
+echo "$MANIFESTS" | xargs git add --
+git commit --amend --no-edit --no-verify -q
