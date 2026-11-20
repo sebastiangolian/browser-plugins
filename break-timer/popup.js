@@ -84,6 +84,11 @@ document.getElementById("open-settings").addEventListener("click", (event) => {
   event.preventDefault();
   chrome.runtime.openOptionsPage();
 });
+// Same as the reload button on the extensions page; the running timer is restored
+// from storage on restart (see restore() in background.js).
+document.getElementById("reload-extension").addEventListener("click", () => {
+  chrome.runtime.reload();
+});
 
 load();
 setInterval(renderTime, 500);

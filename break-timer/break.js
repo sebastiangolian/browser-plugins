@@ -33,6 +33,11 @@ async function load() {
 }
 
 skipButton.addEventListener("click", () => chrome.runtime.sendMessage({ type: "skip" }));
+// Stops the timer completely; it starts again only from the popup (Start work).
+document.getElementById("stop").addEventListener("click", async () => {
+  await chrome.runtime.sendMessage({ type: "reset" });
+  window.close();
+});
 document.getElementById("close").addEventListener("click", () => window.close());
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area === "local" && changes[BreakTimer.STATE_KEY]) load();

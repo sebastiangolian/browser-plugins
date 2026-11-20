@@ -5,9 +5,10 @@ Keeps a healthy work/break rhythm. By default: **45 minutes of work, then a 15-m
 ## How it works
 
 - Click the extension icon and press **Start work**. The icon badge shows the minutes left (blue = work, orange = break, grey = paused).
-- When a work period ends, a system notification says it is time for a break and a small reminder window opens with a countdown.
+- When a work period ends, a system notification says it is time for a break and a small reminder window opens with a countdown. Its red **Stop timer** button turns the timer off completely until you start it again from the extension icon.
 - When the break ends, you get a notification and the next work period starts (or the timer stops – see settings).
 - The popup also lets you **Pause / Resume**, start the break now (**Break now**), end a break early (**End break**) and **Reset**.
+- The ↻ icon in the popup's top-right corner reloads the extension (picks up code changes from disk, like ↻ on the extensions page); a running timer keeps going.
 
 The timer runs in the background (`chrome.alarms`), so it keeps going with all tabs closed. If the browser was closed when a phase ended, the timer resets instead of showing a late reminder.
 

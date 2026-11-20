@@ -40,6 +40,12 @@ button {
   cursor: pointer;
 }
 
+button.danger {
+  border-color: var(--error);
+  background: var(--error);
+  color: #fff;
+}
+
 button.primary {
   border-color: var(--work);
   background: var(--work);

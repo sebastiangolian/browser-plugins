@@ -13,10 +13,23 @@
       .actions button { flex: 1; padding: 6px 8px; white-space: nowrap; }
       footer { display: flex; justify-content: space-between; margin-top: 14px; color: var(--muted); font-size: 12px; }
       footer a { color: inherit; }
+      header { display: flex; align-items: center; justify-content: space-between; }
+      .icon-button { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; padding: 0; border: 0; color: var(--muted); }
+      .icon-button:hover { background: var(--track); color: var(--text); }
+      .icon-button svg { width: 15px; height: 15px; }
     </style>
   </head>
   <body class="phase-idle">
-    <p class="phase" id="phase"></p>
+    <header>
+      <p class="phase" id="phase"></p>
+      <button type="button" class="icon-button" id="reload-extension" title="Reload extension (picks up code changes)" aria-label="Reload extension">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="23 4 23 10 17 10"></polyline>
+          <polyline points="1 20 1 14 7 14"></polyline>
+          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+        </svg>
+      </button>
+    </header>
     <div class="clock" id="clock">--:--</div>
     <p class="detail" id="detail"></p>
     <div class="progress"><div id="progress"></div></div>
